@@ -1,0 +1,71 @@
+header{
+  height: 75px;
+}
+
+.navbar-nav .nav-link {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  color: #FFFFFF;
+/*   margin-top: 27px;
+  margin-bottom: 26px; */
+}
+
+.txt-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: #707070;
+  font-size: 60px;
+}
+
+.txt-card-base {
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+  color: #373A3C;
+}
+
+.txt-card-title {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.txt-card-desc {
+  font-size: 16px;
+}
+
+.txt-card-section {
+  font-size: 11px;
+}
+
+.txt-icon {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.bg-custom-pink {
+  background-color: #E83E8C !important; /* Color rosa personalizado */
+}
+
+/* Estilos base para dispositivos móviles */
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+/* Media queries para dispositivos más grandes */
+@media (min-width: 1280px) {
+  body {
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 1280px; /* Ajusta el ancho máximo según sea necesario */
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}

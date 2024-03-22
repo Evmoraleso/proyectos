@@ -1,0 +1,41 @@
+.cabin {
+    font-family: "Cabin", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.lobster-regular {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.linea-recta {
+    width: 600px; /* Longitud de la línea */
+    height: 1px; /* Grosor de la línea */
+    background-color: black; /* Color de la línea */
+    border-radius: 0.5px; /* Radio de borde para hacer el extremo romo */
+}
+
+.linea-recta2 {
+    width: 1200px; /* Longitud de la línea */
+    height: 1px; /* Grosor de la línea */
+    background-color: black; /* Color de la línea */
+    border-radius: 0.5px; /* Radio de borde para hacer el extremo romo */
+}
+
+
+.card-title {
+    color: #373A3C;
+    font-size: 23px;
+}
+
+.card-desc1 {
+    color: #373A3C;
+    font-size: 16px;
+    /* margin: 0px 0px 0px; */
+}
+
+p .recetas {
+    line-height: 1.0; /* Puedes ajustar este valor según tus preferencias */
+}

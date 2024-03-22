@@ -1,0 +1,26 @@
+body {
+    font-family: "Raleway";
+}
+
+
+/* Container holding the image and the text */
+.container {
+    position: relative;
+}
+
+/* Bottom right text */
+.text-block {
+    position: absolute;
+    color: white;
+    padding-right: 80px;
+    text-align: right;
+    top: 100px;
+    right: 10px;
+    font-size: 16px;
+    width: 616px;
+}
+
+.text-block h1 {
+
+    font-size: 70px;
+}

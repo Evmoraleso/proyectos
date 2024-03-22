@@ -1,0 +1,43 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.roboto-light {
+    font-weight: 300;
+    font-style: normal;
+}
+
+.roboto-medium {
+    font-weight: 500;
+    font-style: normal;
+}
+
+.card-title {
+    color: #212529;
+    font-size: 20px;
+}
+
+.card-desc1 {
+    color: #212529;
+    font-size: 16px;
+    margin: 0px 0px 0px;
+}
+
+.card-desc2 {
+    color: #212529;
+    font-size: 13px;
+}
+
+.card-footer1 {
+    color: #707070;
+    font-size: 16px;
+}
+
+.card-footer2 {
+    color: #28A745;
+    font-size: 20px;
+}
+
+.container {
+ position: relative; 
+}
