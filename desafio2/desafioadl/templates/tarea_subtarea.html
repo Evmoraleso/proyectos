@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- FUNCIONA Y ESTA FILETE -->
+<div class="container mt-5">
+    <h1 class="text-center">Lista de Tareas y Subtareas</h1>
+    <form id="tarea-form">
+        <div class="mb-3">
+            <label for="description" class="form-label">Descripción Tarea</label>
+            <input type="text" id="description" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar Tarea</button>
+    </form>
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descripción</th>
+                <th>Eliminada</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-cuerpo">
+
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal para agregar subtareas -->
+<div class="modal fade" id="subtareaModal" tabindex="-1" aria-labelledby="subtareaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="subtareaModalLabel">Agregar Subtarea</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="subtarea-form">
+                    <div class="mb-3">
+                        <label for="subtarea-description" class="form-label">Descripción de la Subtarea</label>
+                        <input type="text" id="subtarea-description" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Agregar Subtarea</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
