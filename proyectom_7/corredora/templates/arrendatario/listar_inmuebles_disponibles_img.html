@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<p class="lh-lg"></p>
+<h1>Lista de Inmuebles Disponibles para Arriendo</h1>
+<p class="lh-lg"></p>
+<!-- Filtros de Región y Comuna -->
+<form method="GET" action="">
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="region">Región</label>
+            <select id="region" name="region" class="form-control" onchange="this.form.submit()">
+                <option value="">Todas las Regiones</option>
+                {% for region in regiones %}
+                <option value="{{ region.id }}" {% if selected_region == region.id|stringformat:"s" %}selected{% endif %}>{{ region.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="comuna">Comuna</label>
+            <select id="comuna" name="comuna" class="form-control" onchange="this.form.submit()">
+                <option value="">Todas las Comunas</option>
+                {% for comuna in comunas %}
+                <option value="{{ comuna.id }}" {% if selected_comuna == comuna.id|stringformat:"s" %}selected{% endif %}>{{ comuna.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+</form>
+<section name="cards">
+    <div class="row justify-content-center align-items-center" style="margin-top: 5px; margin-bottom: 30px;">
+        {% for inmueble in inmuebles %}
+        <div class="col-md-3 col-xs-12 d-flex g-4 justify-content-center align-items-center">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'img/img1.jpeg' %}" class="card-img-top" alt="..." style="width: 287px; height: 200px;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ inmueble.nombre }}</h5>
+                    <p class="card-text">{{ inmueble.descripcion }}</p>
+                    <p class="card-text">{{ inmueble.valor_mensual_arriendo }}</p>
+                    <p class="card-text">{{ inmueble.direccion }}</p>
+                    <a href="{% url 'actualizar_inmueble' inmueble.id %}" class="btn btn-primary">Solicitar Arriendo</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% for inmueble in inmuebles %}
+<!-- Modal -->
+<div class="modal fade" id="modalEliminar{{ inmueble.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalEliminarLabel{{ inmueble.id }}" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalEliminarLabel{{ inmueble.id }}">Eliminar Inmueble</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro que desea solicitar el arriendo de este el inmueble?
+            </div>
+            <div class="modal-footer">
+                <form id="eliminarinmueble{{ inmueble.id }}" method="POST" action="{% url 'eliminar_inmueble' inmueble.id %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Solicitar</button>
+                </form>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

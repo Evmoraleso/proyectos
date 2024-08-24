@@ -1,0 +1,37 @@
+{% load static %}
+{% block content %}
+<nav class="p-3 bg-primary text-white">
+  <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between">
+        {% if user.is_authenticated %}
+            {% if usuario.tipo_usuario.id == 1 %}
+            <div class="d-flex align-items-center">
+                <ul class="nav ms-3">
+                    <li><a href="/actualizar_perfil" class="nav-link px-2 text-white">Actualizar Perfil</a></li>
+                    <li><a href="/arrendatario/listar_inmuebles_disponibles" class="nav-link px-2 text-white">Inmuebles para Arriendo</a></li>
+                </ul>
+            </div>
+            {% endif %}
+            {% if usuario.tipo_usuario.id == 2 %}
+            <div class="d-flex align-items-center">
+                <ul class="nav ms-3">
+                    <li><a href="/actualizar_perfil" class="nav-link px-2 text-white">Actualizar Perfil</a></li>
+                    <li><a href="/arrendador/listar_inmuebles_usuario" class="nav-link px-2 text-white">Listar Inmuebles</a></li>
+                    <li><a href="/arrendador/agregar_inmueble" class="nav-link px-2 text-white">Agregar Inmueble</a></li>                         
+                </ul>
+            </div>
+            {% endif %}
+          {% endif %}
+          <div class="text-end">
+              {% if user.is_authenticated %}
+              <a class="btn btn-outline-light text-white me-2" href="/login">Cerrar Sesión</a>
+              {% else %}
+              <a class="btn btn-outline-light text-white me-2" href="/login">Iniciar Sesión</a>
+              {% endif %}
+              <a class="btn btn-outline-light btn-dark" href="/signup">Sign-up</a>
+          </div>
+      </div>
+  </div>
+</nav>
+
+{% endblock %}
