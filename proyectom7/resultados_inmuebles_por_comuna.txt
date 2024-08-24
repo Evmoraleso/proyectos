@@ -1,2 +1,0 @@
-Nombre: nombre02, Descripción: descripcion02, Comuna: General Lagos
-Nombre: nombre06, Descripción: descripcion06, Comuna: General Lagos
